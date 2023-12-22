@@ -1,0 +1,86 @@
+{
+  "pins" : [
+    {
+      "identity" : "atributika",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cuzv/Atributika",
+      "state" : {
+        "branch" : "master",
+        "revision" : "20117cadc144c87f5a563e281e23541b7b94afff"
+      }
+    },
+    {
+      "identity" : "combineext",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/CombineCommunity/CombineExt",
+      "state" : {
+        "revision" : "d7b896fa9ca8b47fa7bcde6b43ef9b70bf8c1f56",
+        "version" : "1.8.1"
+      }
+    },
+    {
+      "identity" : "combineextension",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cuzv/CombineExtension",
+      "state" : {
+        "branch" : "master",
+        "revision" : "ee74cf459ceffef5a6f9b7a36fdf47861ce485a3"
+      }
+    },
+    {
+      "identity" : "descriptors",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/FluidGroup/Descriptors",
+      "state" : {
+        "revision" : "f41ce2605a76c5d378fe8c5e8c5c98b544dfd108",
+        "version" : "0.2.3"
+      }
+    },
+    {
+      "identity" : "infrastructure",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cuzv/Infrastructure",
+      "state" : {
+        "branch" : "master",
+        "revision" : "902b1559b16ede72217f7c6f1615db34d94c1bea"
+      }
+    },
+    {
+      "identity" : "textfontdescriptor",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cuzv/TextFontDescriptor",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a1233b9a949a9ef77337ec2a78ff6c60b2191822"
+      }
+    },
+    {
+      "identity" : "texture",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/FluidGroup/Texture.git",
+      "state" : {
+        "revision" : "68df47f0d26522da76b06f22e9a97e4d4ab58dad",
+        "version" : "3.0.2"
+      }
+    },
+    {
+      "identity" : "textureswiftsupport",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/FluidGroup/TextureSwiftSupport",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f79df0b2ff1259c123fc3c75c02aa0ebd294fe3c"
+      }
+    },
+    {
+      "identity" : "uikitext",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cuzv/UIKitExt",
+      "state" : {
+        "branch" : "master",
+        "revision" : "958bb0dd79681110321d5394d44320acd4a44554"
+      }
+    }
+  ],
+  "version" : 2
+}
