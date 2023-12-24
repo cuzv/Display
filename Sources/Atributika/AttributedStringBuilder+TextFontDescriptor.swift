@@ -43,7 +43,7 @@ extension Dictionary where Key == NSAttributedString.Key, Value == Any {
     var dic = self
     if #available(macOS 11.0, iOS 13.0, *) {
       if let fd = dic[.fontDescriptor] as? TextFontDescriptor {
-        dic[.font] = fd.osFont
+        dic[.font] = fd.nativeFont
         dic.removeValue(forKey: .fontDescriptor)
       }
     }

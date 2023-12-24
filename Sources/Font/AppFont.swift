@@ -53,9 +53,17 @@ public struct AppFont {
   }
 
   private static func uiFont(from descriptor: TextFontDescriptor, with settings: AppFont.Settings) -> UIFont {
-    let font = descriptor.with(family: settings.family, design: settings.design, scale: settings.scale).osFont
-    if nil == settings.family {
-      return font.withSize(font.fontDescriptor.pointSize * settings.scale)
+    let family = settings.family
+    let scale = settings.scale
+
+    let font = descriptor.with(
+      family: descriptor.isSystemFont ? family : nil,
+      design: settings.design,
+      scale: scale
+    ).nativeFont
+
+    if nil == family {
+      return font.withSize(font.fontDescriptor.pointSize * scale)
     } else {
       return font
     }
