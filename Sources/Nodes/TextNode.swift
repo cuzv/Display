@@ -4,7 +4,8 @@ import TextFontDescriptor
 import Combine
 import VATextureKit
 
-public class TextNode: VATextNode {
+open class TextNode: VATextNode {
+
   private var truncationAttributedTextRef: AttributedStringBuilder?
   private var truncationBindBag: AnyCancellable?
 

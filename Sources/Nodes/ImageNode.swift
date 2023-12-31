@@ -1,6 +1,8 @@
 import AsyncDisplayKit
 import VATextureKit
 
-public class ImageNode: VAImageNode {
-
+open class ImageNode: VAImageNode {
+  public init() {
+    super.init(corner: .default)
+  }
 }

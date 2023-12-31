@@ -5,7 +5,11 @@ import UIKit
 import UIKitExt
 import VATextureKit
 
-public class ButtonNode: VAButtonNode {
+open class ButtonNode: VAButtonNode {
+  public init() {
+    super.init(corner: .default)
+  }
+  
   private var attributedTexts = [UIControl.State.RawValue: AttributedStringBuilder]()
   private var bags = [UIControl.State.RawValue: AnyCancellable]()
 

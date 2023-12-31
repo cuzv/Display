@@ -3,7 +3,7 @@
 import AsyncDisplayKit
 import Kingfisher
 
-public final class NetworkImageNode: ASNetworkImageNode {
+open class NetworkImageNode: ASNetworkImageNode {
   public init() {
     super.init(cache: KFImageManager.shared, downloader: KFImageManager.shared)
   }
