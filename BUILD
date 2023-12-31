@@ -18,6 +18,8 @@ apple_framework(
         "@AsyncDisplayKit",
         "@Atributika",
         "@CombineExt",
+        "@Kingfisher",
         "@TextureSwiftSupport",
+        "@VATextureKit",
     ],
 )

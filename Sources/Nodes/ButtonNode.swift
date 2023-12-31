@@ -3,8 +3,9 @@ import Atributika
 import Combine
 import UIKit
 import UIKitExt
+import VATextureKit
 
-public class ButtonNode: ASButtonNode {
+public class ButtonNode: VAButtonNode {
   private var attributedTexts = [UIControl.State.RawValue: AttributedStringBuilder]()
   private var bags = [UIControl.State.RawValue: AnyCancellable]()
 

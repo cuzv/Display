@@ -1,5 +1,6 @@
 import AsyncDisplayKit
+import VATextureKit
 
-public class ImageNode: ASImageNode {
+public class ImageNode: VAImageNode {
 
 }

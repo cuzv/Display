@@ -2,8 +2,9 @@ import AsyncDisplayKit
 import Atributika
 import TextFontDescriptor
 import Combine
+import VATextureKit
 
-public class TextNode: ASTextNode {
+public class TextNode: VATextNode {
   private var truncationAttributedTextRef: AttributedStringBuilder?
   private var truncationBindBag: AnyCancellable?
 

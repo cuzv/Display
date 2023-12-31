@@ -1,5 +1,6 @@
 import AsyncDisplayKit
+import VATextureKit
 
-open class DisplayNode: ASDisplayNode {
+open class DisplayNode: VADisplayNode {
 
 }
