@@ -16,7 +16,7 @@ let package = Package(
     .package(url: "https://github.com/cuzv/Infrastructure", branch: "master"),
     .package(url: "https://github.com/cuzv/TextFontDescriptor", branch: "main"),
     .package(url: "https://github.com/cuzv/UIKitExt", branch: "master"),
-    .package(url: "https://github.com/cuzv/Atributika", branch: "master"),
+    .package(url: "https://github.com/psharanda/Atributika", branch: "master"),
     .package(url: "https://github.com/FluidGroup/TextureSwiftSupport", branch: "main"),
   ],
   targets: [
