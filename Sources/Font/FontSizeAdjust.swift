@@ -4,13 +4,14 @@ import UIKit
 import Infrastructure
 
 extension UIFont {
-  static var sizeIncrement: CGFloat = 0
+  public static var sizeIncrement: CGFloat = 0
 
-  static func enableSizeAdjustment() {
+  public static func enableSizeAdjustment() {
     swizzleFontInitializersOnce
   }
 
   private static let swizzleFontInitializersOnce: Void = {
+    swizzleClassMethod(ofClass: UIFont.self, original: #selector(UIFont.init(name:size:)), override: #selector(UIFont._init(name:size:)))
     swizzleClassMethod(ofClass: UIFont.self, original: #selector(UIFont.preferredFont(forTextStyle:)), override: #selector(UIFont._preferredFont(forTextStyle:)))
     swizzleClassMethod(ofClass: UIFont.self, original: #selector(UIFont.preferredFont(forTextStyle:compatibleWith:)), override: #selector(UIFont._preferredFont(forTextStyle:compatibleWith:)))
     swizzleClassMethod(ofClass: UIFont.self, original: #selector(UIFont.systemFont(ofSize:)), override: #selector(UIFont._systemFont(ofSize:)))
@@ -23,6 +24,10 @@ extension UIFont {
     swizzleClassMethod(ofClass: UIFont.self, original: #selector(UIFont.monospacedDigitSystemFont(ofSize:weight:)), override: #selector(UIFont._monospacedDigitSystemFont(ofSize:weight:)))
     swizzleClassMethod(ofClass: UIFont.self, original: #selector(UIFont.monospacedSystemFont(ofSize:weight:)), override: #selector(UIFont._monospacedSystemFont(ofSize:weight:)))
   }()
+
+  @objc private class func _init(name: String, size: CGFloat) -> UIFont? {
+    _init(name: name, size: size + sizeIncrement)
+  }
 
   @objc private class func _preferredFont(forTextStyle style: UIFont.TextStyle) -> UIFont {
     let font = _preferredFont(forTextStyle: style)
