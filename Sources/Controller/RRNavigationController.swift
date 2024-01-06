@@ -4,7 +4,7 @@ import AsyncDisplayKit
 
 #if canImport(RRNavigationTransitioning) && USE_RRNavigationTransitioning
   import RRNavigationTransitioning
-  open class DecidedNavigationController: ASDKNavigationController {
+  open class _RRNavigationController: ASDKNavigationController {
     private lazy var rrTransition = RRNavigationTransition(navigationController: self)
     override public func viewDidLoad() {
       super.viewDidLoad()
@@ -12,10 +12,10 @@ import AsyncDisplayKit
     }
   }
 #else
-open class DecidedNavigationController: ASDKNavigationController {}
+open class _RRNavigationController: ASDKNavigationController {}
 #endif
 
-open class AppNavigationController: DecidedNavigationController {
+open class RRNavigationController: _RRNavigationController {
   override open var shouldAutorotate: Bool {
     topViewController?.shouldAutorotate ?? true
   }

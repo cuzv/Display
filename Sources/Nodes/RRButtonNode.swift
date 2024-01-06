@@ -5,7 +5,7 @@ import UIKit
 import UIKitExt
 import VATextureKit
 
-open class ButtonNode: VAButtonNode {
+open class RRButtonNode: VAButtonNode {
   public init() {
     super.init(corner: .default)
   }

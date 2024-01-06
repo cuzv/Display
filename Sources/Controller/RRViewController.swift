@@ -4,7 +4,7 @@ import AsyncDisplayKit
 import UIKit
 import Infrastructure
 
-open class AppViewController: ASDKViewController<ASDisplayNode> {
+open class RRViewController: ASDKViewController<ASDisplayNode> {
   deinit {
     Log.out("♻️")
   }

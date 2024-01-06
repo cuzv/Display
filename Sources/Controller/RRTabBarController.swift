@@ -1,11 +1,11 @@
 import UIKit
 import UIKitExt
 
-// MARK: - AppTabBarController
+// MARK: - RRTabBarController
 
-open class AppTabBarController<AppTabBarItemTag: Hashable>: AppViewController {
-  public typealias AppTagChildPair = (tag: AppTabBarItemTag, vc: UIViewController & AppTabBarItemProvider)
-  private typealias TagItemViewPair = (tag: AppTabBarItemTag, itemView: AppTabbBarItemView)
+open class RRTabBarController<AppTabBarItemTag: Hashable>: RRViewController {
+  public typealias AppTagChildPair = (tag: AppTabBarItemTag, vc: UIViewController & RRTabBarItemProvider)
+  private typealias TagItemViewPair = (tag: AppTabBarItemTag, itemView: RRTabbBarItemView)
 
   private let tabBarItemHeight: CGFloat
   private let viewControllers: [AppTagChildPair]
@@ -72,7 +72,7 @@ open class AppTabBarController<AppTabBarItemTag: Hashable>: AppViewController {
 
     tabbBarItemViews = viewControllers.enumerated().map { index, pair in
       let (tag, vc) = pair
-      let itemView = AppTabbBarItemView(item: vc.customTabBarItem, spacing: 4)
+      let itemView = RRTabbBarItemView(item: vc.customTabBarItem, spacing: 4)
       itemView.tag = index
       itemView.addGestureRecognizer(
         UITapGestureRecognizer(target: self, action: #selector(onClickTabBarItemView(_:))))
@@ -134,10 +134,10 @@ open class AppTabBarController<AppTabBarItemTag: Hashable>: AppViewController {
   }
 }
 
-// MARK: - AppTabbBarItemView
+// MARK: - RRTabbBarItemView
 
-final class AppTabbBarItemView: UIView {
-  private let item: AppTabBarItem
+final class RRTabbBarItemView: UIView {
+  private let item: RRTabBarItem
   private let imageView: UIImageView
   private let titleLabel: UILabel?
 
@@ -147,7 +147,7 @@ final class AppTabbBarItemView: UIView {
   }
 
   init(
-    item: AppTabBarItem,
+    item: RRTabBarItem,
     spacing: CGFloat
   ) {
     self.item = item
@@ -197,13 +197,13 @@ final class AppTabbBarItemView: UIView {
   }
 }
 
-// MARK: - AppTabBarItemProvider
+// MARK: - RRTabBarItemProvider
 
-public protocol AppTabBarItemProvider {
-  var customTabBarItem: AppTabBarItem { get }
+public protocol RRTabBarItemProvider {
+  var customTabBarItem: RRTabBarItem { get }
 }
 
-public struct AppTabBarItem {
+public struct RRTabBarItem {
   let title: Title?
   let icon: Icon
 
@@ -238,6 +238,6 @@ public struct AppTabBarItem {
   }
 }
 
-public extension AppTabBarItem {
-  static let placeholder = AppTabBarItem(icon: .init(image: .init(), selectedImage: .init()))
+public extension RRTabBarItem {
+  static let placeholder = RRTabBarItem(icon: .init(image: .init(), selectedImage: .init()))
 }
