@@ -28,7 +28,15 @@ extension KFImageManager: ASImageDownloaderProtocol {
   ) -> Any? {
     downloader.downloadImage(
       with: url,
-      options: [.callbackQueue(.untouch), .backgroundDecode],
+      options: [
+        .callbackQueue(.untouch),
+        .backgroundDecode,
+        .keepCurrentImageWhileLoading,
+        .scaleFactor(UIScreen.main.scale),
+        .transition(.fade(0.25)),
+        .cacheOriginalImage,
+        .loadDiskFileSynchronously,
+      ],
       progressBlock: { received, expected in
         if let downloadProgress {
           callbackQueue.async {
